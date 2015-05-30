@@ -1,0 +1,42 @@
+<div id="add_and_del_test">
+</div>
+<form id="del_test"method="POST" action="{$base_url}index.php?c=admin&a=del_test">
+  <label>Delete Test:</label> 
+<select id="l_test" name="nttype" width="300" style="width: 300px" onChange="load_test()">
+	
+	{loop="test"}
+	
+		<option value="{$key}">{$key}
+		
+		</option>
+	{/loop}
+	
+</select>
+
+
+<div id="test_list">
+<select id="a_test" name="ntest" style="position: relative;top: -22px;right: 440px;width: 300px">
+	{loop="atest"}
+		<option value="{$value}">{$value}
+		
+		</option>
+	{/loop}
+	
+</select>
+</div>
+  <input type="submit" value="Delete">
+
+  
+</form>
+<script>
+	af("del_test","main-panel");
+</script>
+
+<script>
+	function load_test()
+	{
+		//alert($("#l_test").val());
+		ap("c=admin&a=get_test_list&ttype="+encodeURIComponent($("#l_test").val()),"test_list",true);
+	}
+
+</script>

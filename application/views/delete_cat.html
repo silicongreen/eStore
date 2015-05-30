@@ -1,0 +1,26 @@
+<div id="add_and_del_cat">
+</div>
+<div class="container-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-6">
+	            <form id="del_cat"method="POST" action="{$base_url}index.php?c=admin&a=del_cat">
+				  <label>Delete Category:</label> 
+					<select name="ncategory">
+						{loop="cat"}
+							<option value="{$value}">{$value}
+							
+							</option>
+						{/loop}
+					</select>
+				  <input type="submit" value="Delete">
+
+				  
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	af("del_cat","main-panel");
+</script>

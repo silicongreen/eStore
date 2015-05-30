@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | E-Shopper</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body><div id="clothing" class="panel-collapse">
+	<div class="panel-body">
+		<ul>
+			<li>
+				<a href="#">
+					<div class="panel panel-default sub-category" >
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a href="#">
+									Men's Collection
+								</a>
+								<a data-toggle="" data-parent="" href="#men">
+									<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+								</a>
+							</h4>
+						</div>
+						<div id="men" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul>
+									<li><a href="#">Panjabi </a></li>
+									<li><a href="#">Shirt </a></li>
+									<li><a href="#">T-shirt</a></li>
+									<li><a href="#">Pant </a></li>
+									<li><a href="#">Shoes </a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="panel panel-default sub-category">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a href="#">
+									Women's Collection
+								</a>
+								<a data-toggle="" data-parent="" href="#women">
+									<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+								</a>
+							</h4>
+						</div>
+						<div id="women" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul>
+									<li><a href="#">Shari </a></li>
+									<li><a href="#">3 Pieces </a></li>
+									<li><a href="#">Shoes </a></li>
+									<li><a href="#">T-shirt</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="panel panel-default sub-category">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a href="#">
+									Kid's Collection
+								</a>
+								<a data-toggle="" data-parent="" href="#kids">
+									<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+								</a>
+							</h4>
+						</div>
+						<div id="kids" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul>
+									<li><a href="#">Shirt </a></li>
+									<li><a href="#">Pant </a></li>
+									<li><a href="#">Shoes </a></li>
+									<li><a href="#">T-shirt</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="panel panel-default sub-category">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a href="#">
+									Others
+								</a>
+								<a data-toggle="" data-parent="" href="#others">
+									<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+								</a>
+							</h4>
+						</div>
+						<div id="others" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul>
+									<li><a href="#">Bed sheets </a></li>
+									<li><a href="#">Towels </a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+ 	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/price-range.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+	    (function(){
+	    	$('.fa').on('mousedown',function(){
+	    		//$('li').show();
+	    		//alert(1);
+	    		// console.log($(this).parent().parent().attr("href"));
+	    		var newsel=$(this).parent().parent().attr("href");
+	    		var oldsel=$(".track").parent().parent().attr("href");
+
+	    		$(newsel).slideDown();
+	    		$(oldsel).slideUp();
+	    		$(".track").removeClass("track");
+	    		$(this).addClass("track");
+				
+	 
+	    		
+	    	});
+
+	    	// $('.fa').on('mouseleave',function(){
+	    	// 	//$('li').show();
+	    	// 	//alert(1);
+	    	// 	console.log($(this).parent().parent().attr("href"));
+
+	    	// 	$($(this).parent().parent().attr("href")).removeClass("in");
+	    	// });
+	    })();
+    </script>
+</body>
+</html>
+

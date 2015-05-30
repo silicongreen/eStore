@@ -1,0 +1,30 @@
+<table>
+
+	<tr><th style="padding-right:40px;">Title</th>
+		<th style="padding-right:40px;">Description</th>
+		<th style="padding-right:40px;">Category</th>
+		<th style="padding-right:40px;">Sub Category</th>
+		<th style="padding-right:100px;">Sub Sub Category</th>
+		<th style="padding-right:100px;">Regular Price</th>
+		<th style="padding-right:40px;">Sale Price</th>
+		<th style="padding-right:40px;">Price Unit</th>
+		<th style="padding-right:10px;">Tag</th>
+		<th style="padding-right:10px;">Size</th>
+		<th style="padding-right:10px;">Color</th>
+	</tr>
+	{loop="all_product_list"}
+		<tr>
+			<td>{$value.title}</td>
+			<td>{$value.des}</td>
+			<td>{$value.cat}</td>
+			<td>{$value.subcat}</td>
+			<td>{$value.subsubcat}</td>
+			<td>{$value.rprice}</td>
+			<td>{$value.sprice}</td>
+			<td>{$value.priceunit}</td>
+			<td>{$value.size}</td>
+			<td>{$value.color}</td>
+			<td>
+		</tr>
+	{/loop}
+</table>

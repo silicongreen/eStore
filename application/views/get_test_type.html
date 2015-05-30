@@ -1,0 +1,36 @@
+<select id="l_test" onChange="load_test()">
+	
+	{loop="test"}
+	
+		<option value="{$key}">{$key}
+		
+		</option>
+	{/loop}
+	
+</select>
+
+
+<div id="test_list">
+<select id="a_test" style="float: right;margin-right: 200px;margin-top: -22px;">
+	{loop="atest"}
+		<option value="{$value}">{$value}
+		
+		</option>
+	{/loop}
+	
+</select>
+</div>
+
+
+
+
+
+
+<script>
+	function load_test()
+	{
+		//alert($("#l_test").val());
+		ap("c=admin&a=get_test_list&ttype="+encodeURIComponent($("#l_test").val()),"test_list",true);
+	}
+
+</script>

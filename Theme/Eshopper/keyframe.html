@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | E-Shopper</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+
+  <style type="text/css">
+  .slider-wrap {
+     width: 445px;
+     overflow: hidden;
+     margin-top: 20px;
+     margin-bottom: 20px;
+  }
+
+
+  ul, li {
+     margin: 0;
+     padding: 0;
+     padding-left: 20px;
+  }
+
+  .slider-wrap ul {
+     width: 10000px;
+     position: relative;
+  }
+  
+ /* .slow ul {
+     -webkit-animation: slide 25s;
+  }
+
+  .smooth ul {
+     -webkit-animation: mymove 5s;
+  }
+
+  .reverse-smooth ul {
+     -webkit-animation: mymove-reverse 5s;
+  }*/
+
+  .slider-wrap li {
+     float: left;
+     list-style: none;
+     position: relative;
+  }
+
+
+
+  .slider-wrap a {
+     text-decoration: none;
+  }
+
+ /* .slider-wrap ul{
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-timing-function: ease-out;
+     -webkit-animation-direction: alternate;
+  }
+*/
+  .slider-wrap ul:hover{
+      -webkit-animation-play-state: paused;   
+  }
+
+  .left-controller{
+    width: 75px;
+    height: 30px;
+    background: green;
+    position: relative;
+    float: left;
+      z-index: 1
+  }
+
+  .right-controller{
+    width: 75px;
+    float: right;
+    height: 30px;
+    background: red;
+    position: relative;
+    top: -37px;
+  }
+  </style>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/prefixfree.js"></script>
+  <script type="text/javascript" src="js/jquery.keyframes.js"></script>
+
+  <script type='text/javascript'> 
+function poke()
+{
+  console.log('tyt');
+  alert(113);
+} 
+
+
+
+
+
+
+
+  var ulWidth = 0;
+  $(window).load(function() {
+   
+    $("li").each(function() {
+        ulWidth = ulWidth + $(this).width();
+    });
+    console.log(ulWidth);
+
+      $.keyframe.define([{
+      name: 'smooth',
+      '0%': {
+        left: 0
+     },
+
+     '100%' : {
+        left:'-'+(ulWidth)+'px'
+     }
+  }]);
+
+
+$.keyframe.define([{
+      name: 'reverse-smooth',
+      '0%': {
+        left: '-'+(ulWidth)+'px'
+     },
+
+     '100%' : {
+        left: 0
+     }
+  }]);
+
+
+      $.keyframe.define([{
+      name: 'speedy',
+      '0%': {
+        left: 0
+     },
+
+     '100%' : {
+        left:'-'+(ulWidth)+'px'
+     }
+  }]);
+
+
+$.keyframe.define([{
+      name: 'reverse-speedy',
+      '0%': {
+        left: '-'+(ulWidth)+'px'
+     },
+
+     '100%' : {
+        left: 0
+     }
+  }]);
+
+
+
+
+
+    $.keyframe.debug = true;
+
+    var pfx = $.keyframe.getVendorPrefix();
+
+    var transform = pfx + 'transform';
+
+    $.keyframe.define([{
+      name: 'normal',
+         '5%' : {
+            left: 0
+         },
+
+         '10%,18%' : {
+            left: '-'+(ulWidth/4)+'px'
+         },
+
+         '23%,31%' : {
+            left:'-'+(ulWidth*2/4)+'px'
+         },
+
+         '36%,44%' : {
+            left: '-'+(ulWidth*3/4)+'px'
+         },
+
+         '49%,57%' : {
+            left: '-'+(ulWidth)+'px'
+         },
+         '62%,70%' : {
+            left: '-'+(ulWidth*3/4)+'px'
+         },
+         '75%,83%' : {
+            left: '-'+(ulWidth*2/4)+'px'
+         },
+         '88%,96%' : {
+            left: '-'+(ulWidth)+'px'
+         },
+         '100%' : { left: 0}
+    }]);
+
+
+     $(".left-controller").bind({
+    mouseenter: function() {
+   //    trert();
+     play('smooth');
+    },
+    mouseleave: function() {
+      play('normal');
+    },
+    mousedown: function() {
+   //    trert();
+     // play('speedy');
+     $('.anim').css('-animation-play-state','paused');
+     $('.anim').css('-webkit-animation-duration','3s');
+     $('.anim').css('-animation-play-state','running');
+    },
+    mouseup: function() {
+      // play('smooth');
+      // $('.anim').css('-animation-play-state','running');
+      $('.anim').css('-webkit-animation-duration','6s');
+    }
+  });
+
+  $(".right-controller").bind({
+    mouseenter: function() {
+     play('reverse-smooth');
+    },
+    mouseleave: function() {
+      play('normal');
+    },
+    mousedown: function() {
+     // play('reverse-speedy');
+      $('.anim').css('-animation-play-state','paused');
+      $('.anim').css('-webkit-animation-duration','3s');
+      $('.anim').css('-animation-play-state','running');
+    },
+    mouseup: function() {
+      play('reverse-smooth');
+    }
+  });
+
+  });
+
+
+
+
+  function play(animation) {
+
+    // $('.anim').resetKeyframe(function() {
+      switch (animation) {
+        
+        case 'normal':
+
+          $('.anim').playKeyframe({
+            name: 'normal',
+            duration: (ulWidth/20)+"s",
+            timingFunction: 'ease',
+            delay: 0,
+            iterationCount: 'infinite',
+            direction: 'normal',
+            fillMode: 'forwards',
+          });
+
+          break;
+        
+        case 'smooth':
+
+          $('.anim').playKeyframe('smooth '+(ulWidth/100)+'s linear 0s infinite normal ');
+
+          break;
+
+         case 'speedy':
+
+          $('.anim').playKeyframe('speedy '+(ulWidth/300)+'s linear 0s infinite normal ');
+
+          break;
+
+         case 'reverse-speedy':
+
+          $('.anim').playKeyframe('reverse-speedy '+(ulWidth/300)+'s linear 0s infinite normal ');
+
+          break;
+        
+        case 'reverse-smooth':
+
+          $('.anim').playKeyframe({
+            name: 'reverse-smooth',
+            duration: (ulWidth/100)+"s",
+            timingFunction: 'linear',
+            iterationCount: 'infinite',
+          });
+
+          break;
+        
+      }
+      $('.anim').css('-animation-play-state','running');
+    // })
+
+  }
+
+
+
+  </script>
+
+  
+
+ 
+</head><!--/head-->
+
+<body>
+  <div class="container">
+    <div class="slider-wrap">
+      <span class="left-controller"></span>
+      <ul class="anim nav nav-tabs">
+        <li class="active"><a href="#all" data-toggle="tab">All Categories</a></li>
+        <li><a href="#clothing-c" data-toggle="tab">Clothing</a></li>
+        <li><a href="#cosmetics-c" data-toggle="tab">Cosmetics</a></li>
+        <li><a href="#ornaments-c" data-toggle="tab">Ornaments</a></li>
+        <li><a href="#electronics-c" data-toggle="tab">Electronics</a></li>
+        <li><a href="#households-c" data-toggle="tab">Households</a></li>
+        <li><a href="#other-c" data-toggle="tab">Other</a></li>
+
+        <li class="active"><a href="#all" data-toggle="tab">All Categories</a></li>
+        <li><a href="#clothing-c" data-toggle="tab">Clothing</a></li>
+        <li><a href="#cosmetics-c" data-toggle="tab">Cosmetics</a></li>
+        <li><a href="#ornaments-c" data-toggle="tab">Ornaments</a></li>
+        <li><a href="#electronics-c" data-toggle="tab">Electronics</a></li>
+        <li><a href="#households-c" data-toggle="tab">Households</a></li>
+        <li><a href="#other-c" data-toggle="tab">Other</a></li><li class="active"><a href="#all" data-toggle="tab">All Categories</a></li>
+        <li><a href="#clothing-c" data-toggle="tab">Clothing</a></li>
+        <li><a href="#cosmetics-c" data-toggle="tab">Cosmetics</a></li>
+        <li><a href="#ornaments-c" data-toggle="tab">Ornaments</a></li>
+        <li><a href="#electronics-c" data-toggle="tab">Electronics</a></li>
+        <li><a href="#households-c" data-toggle="tab">Households</a></li>
+        <li><a href="#other-c" data-toggle="tab">Other</a></li>
+
+        <li class="active"><a href="#all" data-toggle="tab">All Categories</a></li>
+        <li><a href="#clothing-c" data-toggle="tab">Clothing</a></li>
+        <li><a href="#cosmetics-c" data-toggle="tab">Cosmetics</a></li>
+        <li><a href="#ornaments-c" data-toggle="tab">Ornaments</a></li>
+        <li><a href="#electronics-c" data-toggle="tab">Electronics</a></li>
+        <li><a href="#households-c" data-toggle="tab">Households</a></li>
+        <li><a href="#other-c" data-toggle="tab">Other</a></li>
+      </ul>
+      <span class="right-controller"></span>
+    </div>
+  </div>
+
+</body>
+</html>
